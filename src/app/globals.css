@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
+/* next-themes writes `class="dark"` on <html>, so drive the variant from that. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens — CLAUDE.md §5.
+ * Dark mode is a separately tuned tonal palette, not an inversion.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9;
+  --surface: #ffffff;
+  --border: #e7e5e4;
+  --foreground: #18181b;
+  --muted: #57534e;
+  --accent: #0f766e;
+  --accent-contrast: #ffffff;
+}
+
+.dark {
+  --background: #0b0b0c;
+  --surface: #141416;
+  --border: #26262a;
+  --foreground: #fafaf9;
+  --muted: #a1a1aa;
+  --accent: #2dd4bf;
+  --accent-contrast: #0b0b0c;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Sticky navbar height + breathing room, so anchors never land under the bar. */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* Never remove focus affordances — replace them with a better one. */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
