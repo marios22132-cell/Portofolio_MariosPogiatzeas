@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     description:
       "A premium marketing site for a luxury real estate development firm, with an interactive map of the property portfolio and a transactional enquiry flow wired straight to the sales inbox.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Google Maps", "Resend"],
-    demo: "https://kanaria-developers-web-site.vercel.app",
+    demo: "https://www.kanariadevelopers.com/",
     repo: "https://github.com/marios22132-cell/Kanaria-Developers-Web-Site",
   },
   {

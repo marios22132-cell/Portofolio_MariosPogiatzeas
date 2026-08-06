@@ -1,0 +1,4 @@
+# Agent skills and project docs are development-only — no need to ship them to the CDN.
+.claude
+CLAUDE.md
+AGENTS.md
