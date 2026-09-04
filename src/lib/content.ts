@@ -1,6 +1,6 @@
 /**
  * Single source of truth for every piece of content on the site.
- * Facts here come from `public/CV/CV_Marios Pogiatzeas_IT-1.pdf` — do not invent additions.
+ * Facts here come from `public/CV/CV_Marios Pogiatzeas_F.pdf` — do not invent additions.
  */
 
 export type NavLink = {
@@ -20,13 +20,13 @@ export const PROFILE = {
   name: "Marios Pogiatzeas",
   eyebrow: "Full-Stack Developer & IT Professional",
   headline: "I build web applications — and keep the systems behind them running.",
-  bio: "Full-stack developer with four years inside enterprise IT. I ship end-to-end web apps with React, Next.js and Node.js, and I've administered Windows, Azure and Active Directory environments under strict SLAs. Currently a software developer intern at the Central Bank of Cyprus.",
+  bio: "Full-stack developer with four years inside enterprise IT. I ship end-to-end web apps with React, Next.js and Node.js, and I've administered Windows, Azure and Active Directory environments under strict SLAs. Currently a software developer and IT intern at the Central Bank of Cyprus.",
   email: "marios1522@hotmail.com",
   github: "https://github.com/marios22132-cell",
   photo: "/image/MariosPhoto.png",
   photoAlt: "Portrait of Marios Pogiatzeas",
   /** Space in the filename has to stay encoded for the browser to resolve it. */
-  cv: "/CV/CV_Marios%20Pogiatzeas_IT-1.pdf",
+  cv: "/CV/CV_Marios%20Pogiatzeas_F.pdf",
 } as const;
 
 export type Experience = {
@@ -38,13 +38,14 @@ export type Experience = {
 
 export const EXPERIENCE: Experience[] = [
   {
-    role: "Software Developer Intern",
+    role: "Software Developer & IT Intern",
     company: "Central Bank of Cyprus",
     period: "Jun 2026 — Present",
     highlights: [
       "Spearheaded a market research and comparative evaluation project for enterprise Data Catalog solutions, driving the organisation's Data Democratisation initiative.",
       "Developed a scoring matrix and cost-deployment analysis identifying technical strengths, weaknesses and implementation risks for each platform.",
       "Delivered a final market research report and an executive presentation proposing a high-level target architecture for centralised data discovery and access management.",
+      "Provided L1 technical support to staff, triaging and resolving day-to-day hardware, software and access issues.",
     ],
   },
   {
